@@ -1,0 +1,14 @@
+CC=gcc
+CFLAGS=-c
+
+fibonacci: inputn.o fibo.o
+	$(CC) inputn.o fibo.o -o fibonacci
+
+inputn.o: inputn.c
+	$(CC) $(CFLAGS) $<
+
+fibo.o: fibo.c
+	$(CC) $(CFLAGS) $<
+
+clean:
+	rm -f fibonacci inputn.o fibo.o *.dSYM
